@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Task6-HTML</title>
+  </head>
+  <body>
+    <button onclick="PrintAndRemoveModOfThree()">Button One</button>
+    <br /><br />
+    <button onclick="PrintAndPush()">Button Two</button>
+    <br /><br />
+    <button onclick="PrintAndAddThree()">Button Three</button>
+    <br /><br />
+    <button onclick="PrintAtIndex()">Button Four</button>
+    <br /><br />
+    <button onclick="PrintAndShuffle()">Button Five</button>
+
+    <script>
+      function PrintAndRemoveModOfThree() {
+        let num1 = [];
+        for (let i = 0; i <= 100; i++) num1[i] = i;
+        for (let i = num1.length - 1; i >= 0; i--) {
+          if (num1[i] % 3 == 0) num1.splice(i, 1);
+        }
+        for (let i = 0; i < num1.length; i++) console.log(num1[i]);
+      }
+
+      function PrintAndPush() {
+        let num2 = [];
+        for (let i = 0; i <= 100; i++) num2[i] = i;
+        for (let j = 101; j <= 150; j++) num2.push(j);
+        for (let i = 0; i <num2.length; i++) console.log(num2[i]);
+      }
+
+      function PrintAndAddThree() {
+        let num3 = [];
+        for (let i = 0; i <= 100; i++) 
+          num3[i] = i;
+        for (let i=0 ; i<num3.length ; i++){
+          num3[i] += 3;
+          console.log(num3[i]);
+        }
+      }
+
+      function PrintAtIndex() {
+        let num4 = [];
+        for (let i = 0; i <= 100; i++) num4[i] = i;
+        for (let j = 20; j <= 40; j++) console.log(num4.at(j));
+      }
+
+      function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          let j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+      }
+
+      function PrintAndShuffle() {
+        let num5 = [];
+        for (let i = 0; i <= 100; i++) num5[i] = i;
+        shuffleArray(num5);
+        for (let i = 0; i <num5.length; i++) console.log(num5.at(i));
+      }
+    </script>
+  </body>
+</html>
